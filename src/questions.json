@@ -1,0 +1,296 @@
+{"questions":[{
+    "question":"What was the Palestinian currency during the British Mandate ?",
+    "choices":["Palestinian Shekel",
+    "Palestinian Dinar",
+    "Jeneh",
+    "Jordanian Dinar"],
+    "answer":"Jeneh"
+    },{
+    "question":"What is the population of Palestine ?",
+    "choices":["5 million",
+    "10 million",
+    "15 million",
+    "20 million"],
+    "answer":"5 million"
+    },{
+    "question":"Which ancient Palestinian city is known for its association with Prophet Abraham and the Cave of the Patriarchs ?",
+    "choices":["Bait Lahm (Bethlehem)",
+    "Al-Khalil (Hebron)",
+    "Nablus",
+    "Samira (Samaria)"],
+    "answer":"Al-Khalil (Hebron)"
+    },{
+    "question":"What does the olive branch represent for Palestinians ?",
+    "choices":["Strength",
+    "Peace",
+    "Freedom",
+    "Unity"],
+    "answer":"Peace"
+    },{
+    "question":"What is the literacy rate in Palestine ?",
+    "choices":["80.5%",
+    "85.2%",
+    "90.7%",
+    "97.8%"],
+    "answer":"97.8%"
+    },{
+    "question":"What animal appears on the Palestinian coat of arms ?",
+    "choices":["Peacock",
+    "Lion",
+    "Eagle",
+    "Wolf"],
+    "answer":"Eagle"
+    },{
+    "question":"What is the predominant agricultural product of Palestine ?",
+    "choices":["Wheat",
+    "Rice",
+    "Olives",
+    "Cotton"],
+    "answer":"Olives"
+    },{
+    "question":"When was the apartheid wall built in the West Bank ?",
+    "choices":["2002",
+    "2005",
+    "1948",
+    "1967"],
+    "answer":"2002"
+    },{
+    "question":"Who is the “Bride of Yaffa” ?",
+    "choices":["Dalal Al - Mughrabi",
+    "Laila Khaled",
+    "Shadia Abu Gazaleh",
+    "Fatima Bernawi"],
+    "answer":"Dalal Al - Mughrabi"
+    },{
+    "question":"Palestinian Prisoners Day is on which date ?",
+    "choices":["April 17",
+    "April 27",
+    "November 15",
+    "November 25"],
+    "answer":"April 17"
+    },{
+    "question":"What makes up the majority of the economy in Al-Khalil (Hebron) ?",
+    "choices":["Trading",
+    "Farming grapes and producing dairy products",
+    "Consideration",
+    "Glass shops"],
+    "answer":"Farming grapes and producing dairy products"
+    },{
+    "question":"Which ancient city in Palestine is traditionally considered one of the oldest continuously inhabited cities in the world ?",
+    "choices":["Bait Lahm (Bethlehem)",
+    "Ariha (Jericho)",
+    "Nablus",
+    "Al-Khalil (Hebron)"],
+    "answer":"Ariha (Jericho)"
+    },{
+    "question":"What is the lowest place on earth that is located in Palestine ?",
+    "choices":["Ariha (Jericho)",
+    "The Dead Sea",
+    "Al-Khalil (Hebron)",
+    "Nablus"],
+    "answer":"The Dead Sea"
+    },{
+    "question":"What is the highest top/mountain or hill in Palestine ?",
+    "choices":["Mount Nabi Yunis",
+    "Tall `Asur",
+    "Jabal Nablus",
+    "Mount Gerizim"],
+    "answer":"Mount Nabi Yunis"
+    },{
+    "question":"How many Palestinian refugees are there today ?",
+    "choices":["7 million",
+    "5 million",
+    "4 million",
+    "10 million"],
+    "answer":"7 million"
+    },{
+    "question":"What Palestinian dish is the city of Al-Khalil (Hebron) most known for ?",
+    "choices":["Maqlupa",
+    "Dawali",
+    "Qidrah",
+    "Knafeh"],
+    "answer":"Qidrah"
+    },{
+    "question":"Which Palestinian village is known for its unique tradition of Maftoul making?",
+    "choices":["Ein Kerem",
+    "Battir",
+    "Silwan",
+    "Jifna"],
+    "answer":"Jifna"
+    },{
+    "question":"Which town is famous for its high-quality olive oil and wine production ?",
+    "choices":["Beit Sahour",
+    "Beit Jala",
+    "Deir Istiya",
+    "Al-Jib"],
+    "answer":"Beit Jala"
+    },{
+    "question":"Which village is known for its ancient churches, including the Church of Saint Barbara ?",
+    "choices":["Aboud",
+    "Silwan",
+    "Nabi Samwil",
+    "Biddu"],
+    "answer":"Aboud"
+    },{
+    "question":"Which city is famous for its age old soap making industry, knafeh dessert, olive wood furniture, and was also called “Little Damascus” in the past ?",
+    "choices":["Al-Khalil (Hebron)",
+    "Nablus",
+    "Ariha (Jericho)",
+    "Tulkaram"],
+    "answer":"Nablus"
+    },{
+    "question":"Which city is in the Northern-most governorate of Palestine, as well as an important symbol of Palestinian resistance ?",
+    "choices":["Ramallah",
+    "Jenin",
+    "Ramleh",
+    "Yaffa"],
+    "answer":"Jenin"
+    },{
+    "question":"Who is the artist behind the famous Handala cartoon ?",
+    "choices":["Naji al Ali",
+    "Sliman Mansour",
+    "Susan Abulhawa",
+    "Raeda Saadeh"],
+    "answer":"Naji al Ali"
+    },{
+    "question":"Which village is known for its stunning landscapes, ancient terraced agriculture, and significant archaeological sites including Roman ruins ?",
+    "choices":["Al-Walaja",
+    "Beit Sahour",
+    "Ein Kerem",
+    "Beit Jala"],
+    "answer":"Al-Walaja"
+    },{
+    "question":"Which village in East Jerusalem is famous for the City of David archaeological site and its ancient water systems ?",
+    "choices":["Silwan",
+    "Nabi Samwil",
+    "Beit Surik",
+    "Battir"],
+    "answer":"Silwan"
+    },{
+    "question":"Which village in the West Bank is known for its annual almond harvest festival and traditional cultural activities associated with the festival ?",
+    "choices":["Battir",
+    "Biddu",
+    "Deir Istiya",
+    "Artas"],
+    "answer":"Biddu"
+    },{
+    "question":"Who is the Palestinian author known for his novel 'Men in the Sun,' which explores the struggles of Palestinian refugees?",
+    "choices":["Mahmoud Darwish",
+    "Ghassan Kanafani",
+    "Emile Habibi",
+    "Samira Azzam"],
+    "answer":"Ghassan Kanafani"
+    },{
+    "question":"Who is the Palestinian author and scholar known for his work 'Palestinian Identity: The Construction of Modern National Consciousness' ?",
+    "choices":["Edward Said",
+    "Elias Khoury",
+    "Rashid Khalidi",
+    "Aziz Shihab"],
+    "answer":"Rashid Khalidi"
+    },{
+    "question":"Which Palestinian author is known for his novel 'Mornings in Jenin,' which portrays the Palestinian experience through generations of a refugee family ?",
+    "choices":["Susan Abulhawa",
+    "Raja Shehadeh",
+    "Ghassan Kanafani",
+    "Susan Muaddi Darraj"],
+    "answer":"Susan Abulhawa"
+    },{
+    "question":"Which Palestinian film, directed by Najwa Najjar, tells the story of a young Palestinian woman's experience in an Israeli prison ?",
+    "choices":["3000 Nights",
+    "Omar",
+    "Wajib",
+    "Divine Intervention"],
+    "answer":"3000 Nights"
+    },{
+    "question":"Which ancient site in Palestine is known for its large, monolithic statues dating back to the 10th century BCE ?",
+    "choices":["Megiddo",
+    "Jerash",
+    "Tell el-Ful",
+    "Tell es-Sultan"],
+    "answer":"Tell es-Sultan"
+    },{
+    "question":"Which ancient Palestinian city, located in the northern West Bank, is known for its archaeological remains, including a Roman theater and Hippodrome ?",
+    "choices":["Ramallah",
+    "Jerash",
+    "Jericho",
+    "Sebastia"],
+    "answer":"Sebastia"
+    },{
+    "question":"Which city is famous for having some of the most reputed tatreez (embroidery) artisans and a characteristic white Thdatae with intricate red tatreez ?",
+    "choices":["Tulkarm",
+    "Gaza City",
+    "Ramallah",
+    "Nablus"],
+    "answer":"Ramallah"
+    },{
+    "question":"In which year did Israel exchange all settlements in Gaza for others in the west bank ?",
+    "choices":["2002",
+    "2005",
+    "1948",
+    "1967"],
+    "answer":"2005"
+    },{
+    "question":"what is the national tree of Palestine ?",
+    "choices":["Orange tree",
+    "Olive tree",
+    "Fig tree",
+    "Cedar tree"],
+    "answer":"Olive tree"
+    },{
+    "question":"What does the colour green in the Palestinian flag represent ?",
+    "choices":["Olives",
+    "The Fatimid dynasty",
+    "Fertile Arab lands",
+    "B and C"],
+    "answer":"B and C"
+    },{
+    "question":"When is the earliest recorded mention of Palestine ?",
+    "choices":["5th century BC",
+    "1948",
+    "2nd century BC",
+    "1967"],
+    "answer":"5th century BC"
+    },{
+    "question":"What Palestinian city was a major port before the Nakba ?",
+    "choices":["Gaza",
+    "Haifa",
+    "Yaffa",
+    "Akka"],
+    "answer":"Yaffa"
+    },{
+    "question":"Where areas did Palestine export to before The Nakba ?",
+    "choices":["From Egypt and the eastern Mediterranean to the Levant",
+    "To coastal areas surrounding the Arabian Sea",
+    "the Americas",
+    "Europe"],
+    "answer":"From Egypt and the eastern Mediterranean to the Levant"
+    },{
+    "question":"What is the desert surrounding the Dead Sea called ?",
+    "choices":["Empty Quarter",
+    "Al-Naqab",
+    "Eastern Desert",
+    "Barr Al-Khalil"],
+    "answer":"Barr Al-Khalil"
+    },{
+    "question":"Famous Palestinian author and poet Ghassan Kanafani was born in ?",
+    "choices":["Akka (Acre)",
+    "Jenin",
+    "Al-Quds (Jerusalem)",
+    "Al-Khalil (Hebron)"],
+    "answer":"Akka (Acre)"
+    },{
+    "question":"What city is famous for its Zaatar and citrus fruit orchards?",
+    "choices":["Tulkarm",
+    "Al-Khalil (Hebron)",
+    "Al-Quds (Jerusalem)",
+    "Haifa"],
+    "answer":"Tulkarm"
+    }]
+    }
+   
+
+
+
+
+    
+
