@@ -62,7 +62,7 @@ render: (context):any => {
     setPage("game");
   }
   function updatepage(p:string){
-    if(p=="level"  && page=="game" ){
+    if(p=="level"  && (page=="game" ||page=="home") ){
       game_questions=questions.slice();
       setCounter(0);
       setIndex(Math.floor(Math.random() * game_questions.length));
