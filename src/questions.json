@@ -1,4 +1,9 @@
-{"questions":[{
+{"game_info":{"name":"Trivia app",
+"logo":"https://preview.redd.it/0u7gj32h8gzd1.png?auto=webp&s=e01de020a546db83e21cb5966a17842570d1345a",
+
+"comunity_url":"https://www.reddit.com/",
+"start_text":"Start Game",
+"questions":[{
 "question":"Which drink contains caffeine ?",
 "choices":["Mineral water",
 "Orange juice",
@@ -242,90 +247,10 @@
 "200"],
 "answer":"900"
 }
-,{
-"question":"What is a female sheep called or known as ?",
-"choices":["colt",
-"ewe",
-"fleece",
-"ram"],
-"answer":"ewe"
-}
-,{
-"question":"Which of the following is not a type of spider ?",
-"choices":["Bird-dropping spider",
-"Brown recluse spider",
-"Trapdoor spider",
-"Glass spider"],
-"answer":"Glass spider"
-}
-,{
-"question":"All but one of the following are true types of bears. Which is the odd one ?",
-"choices":["Black bear",
-"Sun bear",
-"Moon bear",
-"Brown bear"],
-"answer":"Moon bear"
-}
-,{
-"question":"Clouds are made up of these ...",
-"choices":["Carbon atoms",
-"Water droplets and ice crystals",
-"Oxygen ions",
-"Dust mites"],
-"answer":"Water droplets and ice crystals"
-}
-,{
-"question":"What is the astronomical term that  refers to the outermost layer of the sun, which is a low density cloud of plasma, with higher transparency than the inner layers ?",
-"choices":["Chromosphere",
-"Photosphere",
-"Solar Wind",
-"Corona"],
-"answer":"Corona"
-}
-,{
-"question":"This constellation in the Northern Hemisphere was named after a Greek mythological figure, whose name is translated as ruler over men",
-"choices":["Andromeda",
-"Centaurus",
-"Cassiopeia",
-"Hercules"],
-"answer":"Andromeda"
-}
-,{
-"question":"Convective rain occurs in regions with what daytime whether ?",
-"choices":["Dry during the day",
-"Cold during the day",
-"Hot during the day",
-"Moist during the day"],
-"answer":"Hot during the day"
-}
-,{
-"question":"What does IC stand for in a computer ?",
-"choices":["Integrated Circuit",
-"Integrated Chip",
-"InterChip",
-"InterCircuit"],
-"answer":"Integrated Circuit"
-}
-,{
-"question":"What does RAM stand for ?",
-"choices":["ReadAble Memory",
-"Random Access Memory",
-"Raise All Memory",
-"Erase All Memory"],
-"answer":"Random Access Memory"
-}
-,{
-    "question":"What does the ROM part of a CD-ROM stand for ?",
-    "choices":["Read Only Memory",
-    "Erase Only Memory",
-    "Romial Memory",
-    "Nothing"],
-    "answer":"Read Only Memory"
-    }
 
 ]
 }
-
+}
 
 
 
