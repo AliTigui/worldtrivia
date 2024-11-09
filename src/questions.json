@@ -1,7 +1,8 @@
 {"game_info":{"name":"Trivia app",
 "logo":"https://preview.redd.it/0u7gj32h8gzd1.png?auto=webp&s=e01de020a546db83e21cb5966a17842570d1345a",
-
-"comunity_url":"https://www.reddit.com/",
+"post_title":"Trivia Game",
+"community_url":"https://www.reddit.com/",
+"community_url_text":"Join our comunity",
 "start_text":"Start Game",
 "questions":[{
 "question":"Which drink contains caffeine ?",

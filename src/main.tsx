@@ -14,54 +14,15 @@ http: true,
 
 
 
-//  ---------------------- Helpfull functions
-
-
-async function get_start_text(app:any) {
+//  ---------------------- Getting Config From wiki
+async function get_data(app:any) {
   let name = app.subredditName ? app.subredditName : ".none.";
  
     let game_data=await app.reddit.getWikiPage(name, "trivia_config");
     let data=JSON.parse(game_data.content)
-    return data["start_text"]
+    return data;
 }
-async function get_app_name(app:any) {
-  let name = app.subredditName ? app.subredditName : ".none.";
- 
-    let game_data=await app.reddit.getWikiPage(name, "trivia_config");
-    let data=JSON.parse(game_data.content)
-    return data["name"]
-}
-
-async function get_questions(app:any) {
-  let name = app.subredditName ? app.subredditName : ".none.";
- 
-    let game_data=await app.reddit.getWikiPage(name, "trivia_config");
-    let data=JSON.parse(game_data.content)
-    return data["questions"]
-  
-
-}
-
-
-async function get_app_logo(app:any) {
-  let name = app.subredditName ? app.subredditName : ".none.";
-
-    let game_data=await app.reddit.getWikiPage(name, "trivia_config");
-    let data=JSON.parse(game_data.content)
-    return data["logo"]
-  
-
-}
-async function get_app_url(app:any) {
-  let name = app.subredditName ? app.subredditName : ".none.";
-
-    let game_data=await app.reddit.getWikiPage(name, "trivia_config");
-    let data=JSON.parse(game_data.content)
-    return data["comunity_url"]
-  
-
-}
-// ------------------  End
+// ------------------ Sending mailmod message / setting config_wiki
 Devvit.addTrigger({
   events: ['AppInstall','AppUpgrade'], // Event name from above
   onEvent: async (event:any,context) => {
@@ -71,17 +32,19 @@ Devvit.addTrigger({
    let options={"content":JSON.stringify(game_info, null, '  '),"page":"trivia_config","reason":"loading questions","subredditName":name}
    if (event.type == 'AppInstall') {
     await context.reddit.createWikiPage(options)
-    const conversationId = await context.reddit.modMail.createConversation({
-      subject: 'Trivia app have been installed',
-      body: '**Hello there** \n\n The Trivia App have been installed \n\n A wiki page have been created with name trivia_config that have preloaded questions and config about the page feel free to edit it \n\n check [Read me](https://developers.reddit.com/apps/worldtrivia) for more info about the app',
-      subredditName: name,
+    const conversationId = await context.reddit.modMail.createModInboxConversation({
+      subject: 'The WorldTrivia app has been installed.',
+      bodyMarkdown: `**Hello there**, The WorldTrivia app has been installed. \n A wiki page named **[trivia_config](https://www.reddit.com/r/${name}/about/wiki/trivia_config/)** has been created, containing preloaded questions and configuration details. Feel free to edit it. \ns Please check the **[Read Me](https://developers.reddit.com/apps/worldtrivia)** for more information about the app, and don’t hesitate to contact the developer if you have any issues or suggestions. \n Have Fun!`,
+      subredditId: context.subredditId,
+
     });
    }else if((event.type == 'AppUpgrade')){
-    
-   const conversationId = await context.reddit.modMail.createConversation({
-    subject: 'Trivia app have Updated',
-    body: '**Hello there** \n\n The Trivia App have been  Updated check [Read me](https://developers.reddit.com/apps/worldtrivia) for more info about the update',
-    subredditName: name,
+
+   const conversationId = await context.reddit.modMail.createModInboxConversation({
+    subject: 'The WorldTrivia app has been updated.',
+    bodyMarkdown: '**Hello there**, The WorldTrivia app has been updated. \n\nPlease check the **[Read Me](https://developers.reddit.com/apps/worldtrivia)** for more information about the update.',
+    subredditId: context.subredditId,
+
   });
    }
   
@@ -100,10 +63,10 @@ Devvit.addMenuItem({
   const { reddit, ui} = context;
   
   const subreddit = await reddit.getCurrentSubreddit();
-
+  const data = await get_data(context);
   
   await reddit.submitPost({
-  title: "Trivia Game",
+  title: data["post_title"],
   subredditName: subreddit.name,
   // The preview appears while the post loads
   preview: (
@@ -121,37 +84,21 @@ Devvit.addMenuItem({
   name: 'Experience Post',
   height: 'regular',
   render:  (context):any => {
-  
-    
     // States
+    const [data] = useState(async () => await get_data(context));
+    const [start_text] = useState(data["start_text"]);
+    const[app_name] = useState(data["name"]);
+    const [app_logo] = useState(data["logo"]);
+    const [app_url] = useState(data["community_url"]);
+    const [app_url_text] = useState(data["community_url_text"]);
+    const [questions] = useState(data["questions"].slice());
     const [counter, setCounter] = useState(0);
-    let [data1, setData] = useState(async () => {
-      return await get_questions(context);
-    });
-    let [start_text, setStart_text] = useState(async () => {
-      return await get_start_text(context);
-    });
-    
-    let [app_name, setAppname] = useState(async () => {
-      return await get_app_name(context);
-    });
-    let [app_logo, setApplogo] = useState(async () => {
-      return await get_app_logo(context);
-    });
-    let [app_url, setAppurl] = useState(async () => {
-      return await get_app_url(context);
-    });
     const [index, setIndex] = useState(0);
     const [passed, setPassed] = useState(0);
     const [page, setPage] = useState("home");
     const [correct, setCorrect] = useState(true);
     const [qNumber, setqNumber] = useState(0);
-    
-  
     // Functions
-  
-    
-  
     function setlevel(level:string){
       if(level=="easy"){
         setqNumber(5);
@@ -165,7 +112,7 @@ Devvit.addMenuItem({
     function updatepage(p:string){
       
       if(p=="level"  && (page=="game" ||page=="home" )){
-        game_questions=data1.slice();
+        game_questions=questions.slice();
         setCounter(0);
         setIndex(Math.floor(Math.random() * game_questions.length));
         setPassed(0);
@@ -222,15 +169,15 @@ Devvit.addMenuItem({
     <image
       url={app_logo}
       
-      imageWidth={70}
-      imageHeight={70}
+      imageWidth={85}
+      imageHeight={85}
       resizeMode="fit"
       description="Generative artwork: Fuzzy Fingers"
     />
     </hstack>
   <button appearance="success" size="small" onPress={()=>{ updatepage("level")}}>{start_text}</button>
   
-  <hstack  padding="small" gap="medium" alignment="center middle"><text size="small" onPress={()=>{context.ui.navigateTo(app_url);}}>Join our comunity</text></hstack>
+  <hstack  padding="small" gap="medium" alignment="center middle"><text size="small" onPress={()=>{context.ui.navigateTo(app_url);}}>{app_url_text}</text></hstack>
   </vstack>
     )
   }else if(page=="check"){
@@ -252,9 +199,9 @@ Devvit.addMenuItem({
     return (
       <vstack  height="100%" width="100%"  padding="small" gap="small" alignment="center middle">
       <text size="xlarge"> Select Game Level </text>
-      <hstack width="100px" ><button appearance="success" size="small" onPress={()=> setlevel("easy")} grow>Easy</button></hstack>
-      <hstack width="100px" ><button appearance="caution" size="small" onPress={()=>setlevel("medium")} grow>Medium</button></hstack>
-      <hstack width="100px" ><button appearance="destructive" size="small" onPress={()=>setlevel("hard")} grow>Hard</button></hstack>
+      <hstack width="210px" ><button appearance="success" size="small" onPress={()=> setlevel("easy")} grow>Easy (5 Questions)</button></hstack>
+      <hstack width="210px" ><button appearance="caution" size="small" onPress={()=>setlevel("medium")} grow>Medium (10 Questions)</button></hstack>
+      <hstack width="210px" ><button appearance="destructive" size="small" onPress={()=>setlevel("hard")} grow>Hard (20 Questions)</button></hstack>
       </vstack>
         )
   }
