@@ -54,7 +54,7 @@ We plan to add maps and pictures to make the game more fun.
    - Mods can add url to direct users to their community.
    - When The app get installed, it create wiki with preloaded answers.
    - When The app get installed or updated, it starts mods discussion.
-- v0.9
+- v0.10
    - Mods can change title for the post that the app will create.
    - Mods can change community url text.
    - The App send mail on inbox instead of creating mod conversation.

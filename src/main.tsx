@@ -3,13 +3,11 @@
 import { Devvit, useState} from '@devvit/public-api';
 import {game_info} from './questions.json'
 
-let game_questions:any;
+
 
 
 Devvit.configure({
 redditAPI: true,
-redis: true,
-http: true,
 });
 
 
@@ -98,6 +96,7 @@ Devvit.addMenuItem({
     const [page, setPage] = useState("home");
     const [correct, setCorrect] = useState(true);
     const [qNumber, setqNumber] = useState(0);
+    let game_questions=questions.slice();
     // Functions
     function setlevel(level:string){
       if(level=="easy"){
@@ -113,11 +112,13 @@ Devvit.addMenuItem({
       
       if(p=="level"  && (page=="game" ||page=="home" )){
         game_questions=questions.slice();
+        console.log(game_questions.length)
         setCounter(0);
         setIndex(Math.floor(Math.random() * game_questions.length));
         setPassed(0);
       }else if(page=="check" && p=="game"){
       game_questions.splice(index,1)
+      console.log(game_questions.length)
       setIndex(Math.floor(Math.random() * game_questions.length))
       
       }
