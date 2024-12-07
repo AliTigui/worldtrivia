@@ -32,7 +32,7 @@ Devvit.addTrigger({
     await context.reddit.createWikiPage(options)
     const conversationId = await context.reddit.modMail.createModInboxConversation({
       subject: 'The WorldTrivia app has been installed.',
-      bodyMarkdown: `**Hello there**, The WorldTrivia app has been installed. \n A wiki page named **[trivia_config](https://www.reddit.com/r/${name}/about/wiki/trivia_config/)** has been created, containing preloaded questions and configuration details. Feel free to edit it. \ns Please check the **[Read Me](https://developers.reddit.com/apps/worldtrivia)** for more information about the app, and don’t hesitate to contact the developer if you have any issues or suggestions. \n Have Fun!`,
+      bodyMarkdown: `**Hello there**, The WorldTrivia app has been installed. \n\n A wiki page named **[trivia_config](https://www.reddit.com/r/${name}/about/wiki/trivia_config/)** has been created, containing preloaded questions and configuration details. Feel free to edit it. \n\n Please check the **[Read Me](https://developers.reddit.com/apps/worldtrivia)** for more information about the app, and don’t hesitate to contact the developer if you have any issues or suggestions. \n\n Have Fun!`,
       subredditId: context.subredditId,
 
     });
@@ -89,7 +89,7 @@ Devvit.addMenuItem({
     const [app_logo] = useState(data["logo"]);
     const [app_url] = useState(data["community_url"]);
     const [app_url_text] = useState(data["community_url_text"]);
-    const [questions] = useState(data["questions"].slice());
+    const [questions,setQue] = useState(data["questions"].slice());
     const [counter, setCounter] = useState(0);
     const [index, setIndex] = useState(0);
     const [passed, setPassed] = useState(0);
@@ -98,6 +98,7 @@ Devvit.addMenuItem({
     const [qNumber, setqNumber] = useState(0);
     let game_questions=questions.slice();
     // Functions
+    
     function setlevel(level:string){
       if(level=="easy"){
         setqNumber(5);
@@ -111,14 +112,15 @@ Devvit.addMenuItem({
     function updatepage(p:string){
       
       if(p=="level"  && (page=="game" ||page=="home" )){
+        setQue(data["questions"].slice());
         game_questions=questions.slice();
-        console.log(game_questions.length)
         setCounter(0);
         setIndex(Math.floor(Math.random() * game_questions.length));
         setPassed(0);
       }else if(page=="check" && p=="game"){
+      
       game_questions.splice(index,1)
-      console.log(game_questions.length)
+      setQue(game_questions)
       setIndex(Math.floor(Math.random() * game_questions.length))
       
       }
@@ -137,21 +139,74 @@ Devvit.addMenuItem({
     setPage("check");
   }
   
-  if(passed<qNumber && page=="game"){
-   
-  return (
+  if(passed<qNumber && page=="game"  ){
+   if(game_questions[index]["type"]=="text_question"){
+    return (
   
-  <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
-  <text color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
-  <button   size="small" onPress={()=>updatescore(game_questions[index]["choices"][0])}>{game_questions[index]["choices"][0]}</button>
-  <button appearance="bordered"  size="small" onPress={()=>updatescore(game_questions[index]["choices"][1])}>{game_questions[index]["choices"][1]}</button>
-  <button  appearance="destructive" size="small" onPress={()=>updatescore(game_questions[index]["choices"][2])}>{game_questions[index]["choices"][2]}</button>
-  <button  appearance="success" size="small" onPress={()=>updatescore(game_questions[index]["choices"][3])}>{game_questions[index]["choices"][3]}</button>
+      <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
+     
+      <text alignment="center"  color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+      
+      <button   size="small" onPress={()=>updatescore(game_questions[index]["choices"][0])}>{game_questions[index]["choices"][0]}</button>
+      <button appearance="bordered"  size="small" onPress={()=>updatescore(game_questions[index]["choices"][1])}>{game_questions[index]["choices"][1]}</button>
+      <button  appearance="destructive" size="small" onPress={()=>updatescore(game_questions[index]["choices"][2])}>{game_questions[index]["choices"][2]}</button>
+      <button  appearance="success" size="small" onPress={()=>updatescore(game_questions[index]["choices"][3])}>{game_questions[index]["choices"][3]}</button>
+      
+      </vstack>
+      
+      )
+   }
+   else{
+    return (
   
-  </vstack>
-  
-  )
-  
+      <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
+         
+      <text alignment="center" color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+      
+      <hstack  width="100%" gap="medium" alignment="center middle">
+      <image onPress={()=>updatescore(game_questions[index]["choices"][0]["url"])}
+          url={game_questions[index]["choices"][0]["url"]}
+          
+          imageWidth={100}
+          imageHeight={100}
+          resizeMode="fill"
+          description="Generative artwork: Fuzzy Fingers"
+        />
+            <image onPress={()=>updatescore(game_questions[index]["choices"][1]["url"])}
+          url={game_questions[index]["choices"][1]["url"]}
+          
+          imageWidth={100}
+          imageHeight={100}
+          resizeMode="fill"
+          description="Generative artwork: Fuzzy Fingers"
+        />
+      
+     </hstack>
+      <hstack width="100%"  gap="medium" alignment="center middle">
+      <image onPress={()=>updatescore(game_questions[index]["choices"][2]["url"])}
+          url={game_questions[index]["choices"][2]["url"]}
+        
+          imageWidth={100}
+          imageHeight={100}
+          resizeMode="fill"
+          description="Generative artwork: Fuzzy Fingers"
+        />
+            <image onPress={()=>updatescore(game_questions[index]["choices"][3]["url"])}
+          url={game_questions[index]["choices"][3]["url"]}
+        
+      
+          imageWidth={100}
+          imageHeight={100}
+          resizeMode="fill"
+          description="Generative artwork: Fuzzy Fingers"
+        />
+      </hstack>
+      </vstack>
+      
+      )
+   }
+ 
+
   }else if(page=="game"){
     return (
   <vstack  height="100%" width="100%"  padding="small" gap="small" alignment="center middle">
@@ -181,21 +236,46 @@ Devvit.addMenuItem({
   <hstack  padding="small" gap="medium" alignment="center middle"><text size="small" onPress={()=>{context.ui.navigateTo(app_url);}}>{app_url_text}</text></hstack>
   </vstack>
     )
-  }else if(page=="check"){
-    return (
+  }else if(page=="check" ){
+    if(game_questions[index]["type"]=="text_question"){
+      return (
   
-      <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
-      
-      
-      <text color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
-      
-      <text wrap={true} size="large" weight="bold" color={correct ? `green` : 'red'}>{correct ? `You guessed it right!` : 'That\'s incorrect. The right answer is '+game_questions[index]["answer"]}</text>
-      
-      <hstack width="100px" ><button  appearance="success" size="small" onPress={()=>updatepage("game")} grow >Next</button></hstack>
+        <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
         
+        
+        <text alignment="center" color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+        
+        <text wrap={true} alignment="center" size="large" weight="bold" color={correct ? `green` : 'red'}>{correct ? `You guessed it right!` : 'That\'s incorrect. The right answer is '+game_questions[index]["answer"]}</text>
+        
+        <hstack width="100px" ><button  appearance="success" size="small" onPress={()=>updatepage("game")} grow >Next</button></hstack>
+          
+        
+        </vstack>
+      )
+    }else{
+return (
+  
+  <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
       
-      </vstack>
-    )
+      
+  <text color="black white" alignment="center" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+  
+  <text wrap={true} alignment="center" size="large" weight="bold" color={correct ? `green` : 'red'}>{correct ? `You guessed it right!` : 'That\'s incorrect. The right answer is '}</text>
+  <image
+    url={game_questions[index]["answer"]}
+    
+    imageWidth={85}
+    imageHeight={85}
+    resizeMode="fill"
+    description="answer"
+  />
+  <hstack width="100px" ><button  appearance="success" size="small" onPress={()=>updatepage("game")} grow >Next</button></hstack>
+    
+  
+  </vstack>
+)
+    }
+ 
   }else if(page=="level"){
     return (
       <vstack  height="100%" width="100%"  padding="small" gap="small" alignment="center middle">

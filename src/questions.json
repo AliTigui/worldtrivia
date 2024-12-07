@@ -10,28 +10,32 @@
 "Orange juice",
 "Coffee",
 "Beer"],
-"answer":"Coffee"
+"answer":"Coffee",
+"type":"text_question"
 },{
 "question":"What is the symbol of chemical element iron ?",
 "choices":["Fe",
 "I",
 "Ir",
 "Br"],
-"answer":"Fe"
+"answer":"Fe",
+"type":"text_question"
 },{
 "question":"What is the capital of Mongolia",
 "choices":["Davao",
 "Islamabad",
 "Quezon",
 "Ulaanbaatar"],
-"answer":"Ulaanbaatar"
+"answer":"Ulaanbaatar",
+"type":"text_question"
 },{
 "question":"In what year USA bought Alaska",
 "choices":["1942",
 "1882",
 "1854",
 "1867"],
-"answer":"1867"
+"answer":"1867",
+"type":"text_question"
 }
 ,{
 "question":"The Punic Wars were a series of three wars fought between these two powers ",
@@ -39,7 +43,8 @@
 "Athens and Sparta",
 "Rome and Carthage",
 "Carthage and Athens"],
-"answer":"Rome and Carthage"
+"answer":"Rome and Carthage",
+"type":"text_question"
 }
 ,{
 "question":"In what year did the French pull out of Indochina ?",
@@ -47,14 +52,16 @@
 "1949",
 "1964",
 "1970"],
-"answer":"1954"
+"answer":"1954",
+"type":"text_question"
 },{
 "question":"The Free Speech Movement was a student protest that began in 1964 on the campus of which university ?",
 "choices":["Florida International University",
 "Anderson University, Indiana",
 "California State University, Los Angeles",
 "University of California, Berkeley"],
-"answer":"University of California, Berkeley"
+"answer":"University of California, Berkeley",
+"type":"text_question"
 }
 ,{
 "question":"What is the capital of Afghanistan ?",
@@ -62,7 +69,8 @@
 "Tirana",
 "Dushanbe",
 "Tashkent"],
-"answer":"Kabul"
+"answer":"Kabul",
+"type":"text_question"
 }
 ,{
 "question":"What is the capital of Australia ?",
@@ -70,7 +78,8 @@
 "Ottawa",
 "Canberra",
 "Melbourne"],
-"answer":"Canberra"
+"answer":"Canberra",
+"type":"text_question"
 }
 ,{
 "question":"What is the capital of Italy ?",
@@ -78,7 +87,8 @@
 "Rome",
 "Naples",
 "Milan"],
-"answer":"Rome"
+"answer":"Rome",
+"type":"text_question"
 }
 ,{
 "question":"What is the capital of Germany ?",
@@ -86,7 +96,8 @@
 "Frankfurt",
 "Munich",
 "Hamburg"],
-"answer":"Berlin"
+"answer":"Berlin",
+"type":"text_question"
 }
 ,{
 "question":"What is the capital of Norway ?",
@@ -94,7 +105,8 @@
 "Helsinki",
 "Copenhagen",
 "Oslo"],
-"answer":"Oslo"
+"answer":"Oslo",
+"type":"text_question"
 }
 ,{
 "question":"What term refers to the horizontal line, 23.5 degrees S, which passes through South America, Africa, and Australia ?",
@@ -102,7 +114,8 @@
 "Tropic of Cancer",
 "Prime Meridian",
 "Equator"],
-"answer":"Tropic of Capricorn"
+"answer":"Tropic of Capricorn",
+"type":"text_question"
 }
 ,{
 "question":"Which feature on a map helps determine direction ?",
@@ -110,7 +123,8 @@
 "a key",
 "a legend",
 "a scale"],
-"answer":"a compass rose"
+"answer":"a compass rose",
+"type":"text_question"
 }
 ,{
 "question":"Which of these seas is largest ?",
@@ -118,7 +132,8 @@
 "Bering",
 "Mediterranean",
 "Arabian Sea"],
-"answer":"Mediterranean"
+"answer":"Mediterranean",
+"type":"text_question"
 }
 ,{
 "question":"Which of these oceans has the greatest depth ?",
@@ -126,7 +141,8 @@
 "Atlantic Ocean",
 "Indian Ocean",
 "Pacific Ocean"],
-"answer":"Pacific Ocean"
+"answer":"Pacific Ocean",
+"type":"text_question"
 }
 ,{
 "question":"Which of these deserts is largest ?",
@@ -134,121 +150,118 @@
 "Syrian",
 "Thar",
 "Great Sandy"],
-"answer":"Syrian"
+"answer":"Syrian",
+"type":"text_question"
 }
 ,{
-"question":"What Canadian lake is the largest in the world, located on an island ?",
-"choices":["Nettilling Lake",
-"Aral",
-"Winnipeg",
-"Winnipeg"],
-"answer":"Nettilling Lake"
+"question":"What image represent Taj Mahal",
+"choices":[
+{
+"url":"https://preview.redd.it/tswuwco2if5e1.jpeg?auto=webp&s=15d202e430ce2d68bcf6a906c132a950bceda8b5",
+"title":"Taj Mahal"
+},
+{
+"url":"https://preview.redd.it/sdk5vf25if5e1.jpeg?auto=webp&s=6d5861b8396508789715bd47ec2feafd54a05e6b",
+"title":"Aqsa"
+},
+{
+"url":"https://preview.redd.it/alger-mosque-v0-ryrtrjdbif5e1.jpeg?auto=webp&s=9881f1e097ca1b9b84a5dd5b56805556236556a9",
+"title":"Algeria great mosque"
+},
+{
+"url":"https://preview.redd.it/ds7aey09if5e1.jpeg?auto=webp&s=c93028b24245c103c4685e83f1c4b1ea9cf1f083",
+"title":"Ayasofya"
+}],
+"answer":"https://preview.redd.it/tswuwco2if5e1.jpeg?auto=webp&s=15d202e430ce2d68bcf6a906c132a950bceda8b5",
+"type":"image_question"
+},{
+"question":"What image represent Eiffel Tower",
+"choices":[
+{
+"url":"https://preview.redd.it/china-wall-v0-btsaryjkif5e1.jpeg?auto=webp&s=5e71199953417b84000413a806b6cf449e808df5",
+"title":"China wall"
+},
+{
+"url":"https://preview.redd.it/japan-tower-v0-jg5byr3gif5e1.jpeg?auto=webp&s=499bc2642a979e7b96dda73bf052c6f7346c6a12",
+"title":"Jappan Tower"
+},
+{
+"url":"https://preview.redd.it/effel-tower-v0-qciyhcoiif5e1.jpeg?auto=webp&s=fecea6eb776a332593d19c61e1c72bd818f8620b",
+"title":"Eiffel Tower"
+},
+{
+"url":"https://preview.redd.it/borj-khalifa-v0-8leo72vdif5e1.jpeg?auto=webp&s=39d67aafec7a74d9c2bd489f9c7e8d3335911a1d",
+"title":"Burj Khalifa"
+}],
+"answer":"https://preview.redd.it/effel-tower-v0-qciyhcoiif5e1.jpeg?auto=webp&s=fecea6eb776a332593d19c61e1c72bd818f8620b",
+"type":"image_question"
 }
 ,{
-"question":"What is the lowest lake on Earth ?",
-"choices":["Issyk-Kul",
-"Urmia",
-"Dead Sea",
-"Balkhash"],
-"answer":"Dead Sea"
+"question":"What image represent Algeria map",
+"choices":[
+    {
+    "url":"https://preview.redd.it/6tiksrtmif5e1.png?auto=webp&s=547cd3967dfa9e980ce67efd8344320bcaba3ab7",
+    "title":"Tunisia"
+    },
+    {
+    "url":"https://preview.redd.it/v66gc4ktif5e1.jpeg?auto=webp&s=cbe80822e2d8ef14054f686b7994a08f39e6b20a",          
+    "title":"Algeria"
+    },
+    {
+    "url":"https://preview.redd.it/7fajtg1rif5e1.png?auto=webp&s=06ad5110585600c514bbc890ef4b772d34b347de",
+    "title":"Libya"
+    },
+    {
+    "url":"https://preview.redd.it/n5gnknsoif5e1.jpeg?auto=webp&s=8d282d4b423ffddd03bab214df99e2ce1ac16d2a",
+    "title":"Italy"
+    }],
+"answer":"https://preview.redd.it/v66gc4ktif5e1.jpeg?auto=webp&s=cbe80822e2d8ef14054f686b7994a08f39e6b20a",
+"type":"image_question"
 }
 ,{
-"question":"The medical term cardio, deriving from a Greek word, refers to which organ of the human body ?",
-"choices":["Heart",
-"Brain",
-"Liver",
-"Lungs"],
-"answer":"Heart"
+"question":"What image represent Giza pyramids",
+"choices":[
+    {
+    "url":"https://preview.redd.it/algeria-pyramid-v0-9scuupbyif5e1.jpeg?auto=webp&s=7dd029dcface3ce42ac56372a4aeaa10f7b0ca8f",
+    "title":"Algeria pyramids"
+    },
+    {
+    "url":"https://preview.redd.it/egypt-pyramid-v0-raevgc0wif5e1.jpeg?auto=webp&s=38ea3ea66f7d1334429e61eaf31bec285ed4e43f",
+    "title":"Giza pyramids"
+    },
+    {
+    "url":"https://preview.redd.it/sudan-pyramid-v0-ge7v25k0jf5e1.jpeg?auto=webp&s=b7cd030d88b2d2f0ef0e00033bdfcdc07c05a42a",
+    "title":"Sudan pyramid"
+    },
+    {
+    "url":"https://preview.redd.it/maya-pyramid-v0-ofk56hu2jf5e1.jpeg?auto=webp&s=aa0bb31499389c679a468ebe4020b95c36a92592",
+    "title":"Maya pyramid"
+    }],
+"answer":"https://preview.redd.it/egypt-pyramid-v0-raevgc0wif5e1.jpeg?auto=webp&s=38ea3ea66f7d1334429e61eaf31bec285ed4e43f",
+"type":"image_question"
 }
 ,{
-"question":"Erythrocytes are a type of blood cells, consisting mainly of hemoglobin. What does the word erythro mean ?",
-"choices":["Cell",
-"White",
-"Knowledge",
-"Red"],
-"answer":"Red"
+"question":"What image represent Poland flag",
+"choices":[
+    {
+    "url":"https://preview.redd.it/bahrin-falg-v0-5c743ahfjf5e1.png?auto=webp&s=df93addc530e06de61035bc5b2bc8ea4e7da208a",
+    "title":"Bahrin flag"
+    },
+    {
+    "url":"https://preview.redd.it/qatar-flag-v0-89ruync6jf5e1.png?auto=webp&s=42624302acb41513b68f2c2282316c3650c8e7c2",
+        "title":"Qatar falg"
+    },
+    {
+    "url":"https://preview.redd.it/indonesia-flag-v0-3w0mastjjf5e1.png?auto=webp&s=d6f12d6d56a7010a4ffd2581ed770cb90646d835",
+    "title":"Indonesia flag"
+    },
+    {
+    "url":"https://preview.redd.it/poland-falg-v0-md7dd5phjf5e1.png?auto=webp&s=d4ec18afa2329a7b0536959a0c5b6fce154976d6",
+    "title":"Poland flag"
+    }],
+"answer":"https://preview.redd.it/poland-falg-v0-md7dd5phjf5e1.png?auto=webp&s=d4ec18afa2329a7b0536959a0c5b6fce154976d6",
+"type":"image_question"
 }
-,{
-"question":"Jell-O, the popular gelatin dessert, is made in part, from what ?",
-"choices":["Red ants",
-"Bones and hides",
-"Horses and cows hooves",
-"None of these"],
-"answer":"Bones and hides"
-}
-,{
-"question":"What food results in negative calories when eaten ?",
-"choices":["Carrots",
-"Celery",
-"Radishes",
-"All of these"],
-"answer":"All of these"
-}
-,{
-"question":"Typically, how many random items can human short-term memory store ?",
-"choices":["6-8",
-"3-4",
-"9-11",
-"15-17"],
-"answer":"6-8"
-}
-,{
-"question":"DÉJÀ VU is one of the curios brain phenomenon. Which of these most accurately describes the term ?",
-"choices":["A spontaneous involuntary creation of a false memory",
-"A sensation of something seen or experienced before",
-"A sudden flash of a long forgotten memory",
-"The feeling that something familiar was never seen before"],
-"answer":"A sensation of something seen or experienced before"
-}
-,{
-"question":"Three of these animals hibernate. Which one does not ?",
-"choices":["Mouse",
-"Frog",
-"Sloth",
-"Snake"],
-"answer":"Sloth"
-}
-,{
-"question":"Three of these species shed their skin. Which one does not ?",
-"choices":["Penguins",
-"Snakes",
-"Insects",
-"Crustaceans"],
-"answer":"Penguins"
-}
-,{
-"question":"What breed is known as the favourite breed of Queen Elizabeth II ?",
-"choices":["Welsh Corgi",
-"Border Collie",
-"Old English Sheepdog",
-"Australian Cattle Dog"],
-"answer":"Welsh Corgi"
-}
-,{
-"question":"What is the rarest and most endangered of all wolves ?",
-"choices":["Black-backed Wolf",
-"Ethiopian Wolf",
-"Red Wolf",
-"Gray Wolf"],
-"answer":"Red Wolf"
-}
-,{
-"question":"What is small nocturnal animal, whose natural habitat are the deserts of Northern Africa, is known to jump not only for hunting or protection, but also for pleasure ?",
-"choices":["Cape Fox",
-"Red Fox",
-"Bengal Fox",
-"Fennec"],
-"answer":"Fennec"
-}
-,{
-"question":"How many types of bats are there ?",
-"choices":["900",
-"700",
-"500",
-"200"],
-"answer":"900"
-}
-
 ]
 }
 }
