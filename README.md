@@ -1,7 +1,7 @@
 ## World trivia
 This app is a multichoice game. Mods can install it and add it to their subs, then people can practice and play and see their scores.
 You can see below how the app works.
-![Game](https://s11.gifyu.com/images/SyQhA.gif)
+![Game](https://s7.gifyu.com/images/SJXxj.gif)
 
 ### How it works :
 
@@ -14,7 +14,10 @@ Mods can change the app logo, app name and app questions on the **trivia_config*
 - `start_text` A text that will display on the button that starts the trivia game.  
 - `community_url` A link to guide users for to the community.  
 - `community_url_text` text that you display over community url.  
+- `text_color` text color for title and questions
+- `background_image` background image for the app it should be url
 - `questions` A list of objects that represent questions. Each question objects should have question, 4 choices and also should have correct answers inside it like that:  
+This for text question 
 ```
 {
 "question":"Which drink contains caffeine ?",
@@ -23,7 +26,31 @@ Mods can change the app logo, app name and app questions on the **trivia_config*
 "Coffee",
 "Beer"],
 "answer":"Coffee"
+"type":"text_question"
 }
+```
+And for image question like this  
+```
+"question":"What image represent Eiffel Tower",
+"choices":[
+{
+"url":"https://preview.redd.it/china-wall-v0-btsaryjkif5e1.jpeg?auto=webp&s=5e71199953417b84000413a806b6cf449e808df5",
+"title":"China wall"
+},
+{
+"url":"https://preview.redd.it/japan-tower-v0-jg5byr3gif5e1.jpeg?auto=webp&s=499bc2642a979e7b96dda73bf052c6f7346c6a12",
+"title":"Jappan Tower"
+},
+{
+"url":"https://preview.redd.it/effel-tower-v0-qciyhcoiif5e1.jpeg?auto=webp&s=fecea6eb776a332593d19c61e1c72bd818f8620b",
+"title":"Eiffel Tower"
+},
+{
+"url":"https://preview.redd.it/borj-khalifa-v0-8leo72vdif5e1.jpeg?auto=webp&s=39d67aafec7a74d9c2bd489f9c7e8d3335911a1d",
+"title":"Burj Khalifa"
+}],
+"answer":"https://preview.redd.it/effel-tower-v0-qciyhcoiif5e1.jpeg?auto=webp&s=fecea6eb776a332593d19c61e1c72bd818f8620b",
+"type":"image_question"
 ```
 You can check this picture to understand how the configurations will work :  
 ![Guide](https://preview.redd.it/9xc2pb482xzd1.png?auto=webp&s=1b122ae13703de1822ae064616e384c78b5ec19e)
@@ -59,3 +86,6 @@ We plan to add maps and pictures to make the game more fun.
    - Mods can change community url text.
    - The App send mail on inbox instead of creating mod conversation.
    - Fixed the read me and added a GIF to show how the app works. 
+- v0.11
+   - Mods can set background image and text color that match with it. 
+   - Now the game support images questions

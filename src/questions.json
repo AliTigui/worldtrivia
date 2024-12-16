@@ -4,6 +4,8 @@
 "community_url":"https://www.reddit.com/",
 "community_url_text":"Join our comunity",
 "start_text":"Start Game",
+"text_color":"black",
+"background_image":"https://preview.redd.it/background-v0-grlwhy8oc97e1.png?auto=webp&s=ef89785b217fec411cb2fd826181ceed9309ca77",
 "questions":[{
 "question":"Which drink contains caffeine ?",
 "choices":["Mineral water",

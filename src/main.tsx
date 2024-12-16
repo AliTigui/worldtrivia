@@ -17,7 +17,7 @@ async function get_data(app:any) {
   let name = app.subredditName ? app.subredditName : ".none.";
  
     let game_data=await app.reddit.getWikiPage(name, "trivia_config");
-    let data=JSON.parse(game_data.content)
+    let data=JSON.parse(game_data.content.replaceAll("\\",""))
     return data;
 }
 // ------------------ Sending mailmod message / setting config_wiki
@@ -89,6 +89,8 @@ Devvit.addMenuItem({
     const [app_logo] = useState(data["logo"]);
     const [app_url] = useState(data["community_url"]);
     const [app_url_text] = useState(data["community_url_text"]);
+    const [background_image] = useState(data["background_image"]);
+    const [text_color] = useState(data["text_color"]);
     const [questions,setQue] = useState(data["questions"].slice());
     const [counter, setCounter] = useState(0);
     const [index, setIndex] = useState(0);
@@ -142,26 +144,44 @@ Devvit.addMenuItem({
   if(passed<qNumber && page=="game"  ){
    if(game_questions[index]["type"]=="text_question"){
     return (
-  
-      <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
+      <zstack height="100%" width="100%">
+              <image 
+          url={background_image}
+          imageWidth={300}
+          imageHeight={300}
+            height="100%"
+            width="100%"
+          resizeMode="fill"
+          description="background image"
+        />
+      <vstack  height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
      
-      <text alignment="center"  color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+      <text alignment="center"  color={text_color} size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
       
-      <button   size="small" onPress={()=>updatescore(game_questions[index]["choices"][0])}>{game_questions[index]["choices"][0]}</button>
-      <button appearance="bordered"  size="small" onPress={()=>updatescore(game_questions[index]["choices"][1])}>{game_questions[index]["choices"][1]}</button>
+      <button   size="small"  onPress={()=>updatescore(game_questions[index]["choices"][0])}>{game_questions[index]["choices"][0]}</button>
+      <button appearance="media"   size="small" onPress={()=>updatescore(game_questions[index]["choices"][1])}>{game_questions[index]["choices"][1]}</button>
       <button  appearance="destructive" size="small" onPress={()=>updatescore(game_questions[index]["choices"][2])}>{game_questions[index]["choices"][2]}</button>
       <button  appearance="success" size="small" onPress={()=>updatescore(game_questions[index]["choices"][3])}>{game_questions[index]["choices"][3]}</button>
       
       </vstack>
-      
+      </zstack>
       )
    }
    else{
     return (
-  
-      <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
+      <zstack height="100%" width="100%">
+      <image 
+  url={background_image}
+  imageWidth={300}
+  imageHeight={300}
+    height="100%"
+    width="100%"
+  resizeMode="fill"
+  description="background image"
+/>
+      <vstack  height="100%" width="100%"  padding="small" gap="small"  alignment="middle">
          
-      <text alignment="center" color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+      <text alignment="center" color={text_color} size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
       
       <hstack  width="100%" gap="medium" alignment="center middle">
       <image onPress={()=>updatescore(game_questions[index]["choices"][0]["url"])}
@@ -202,25 +222,46 @@ Devvit.addMenuItem({
         />
       </hstack>
       </vstack>
-      
+      </zstack>
       )
    }
  
 
   }else if(page=="game"){
     return (
+      <zstack height="100%" width="100%">
+      <image 
+  url={background_image}
+  imageWidth={300}
+  imageHeight={300}
+    height="100%"
+    width="100%"
+  resizeMode="fill"
+  description="background image"
+/>
   <vstack  height="100%" width="100%"  padding="small" gap="small" alignment="center middle">
-  <text size="xlarge"> Your score is: {counter} /{qNumber}</text>
+  <text size="xlarge" color={text_color}> Your score is: {counter} /{qNumber}</text>
   <hstack width="100px" ><button appearance="success" size="small" onPress={()=>updatepage("level")} grow>Play  Again</button></hstack>
   <hstack width="100px" ><button appearance="success" size="small" onPress={()=>updatepage("home")}grow>Go Home</button></hstack>
   </vstack>
+  </zstack>
     )
   }else if (page=="home"){
     
   
     return (
+      <zstack height="100%" width="100%">
+      <image 
+  url={background_image}
+  imageWidth={300}
+  imageHeight={300}
+    height="100%"
+    width="100%"
+  resizeMode="fill"
+  description="background image"
+/>
     <vstack height="100%" width="100%" padding="small" gap="medium" alignment="middle">
-      <hstack  padding="small" gap="medium" alignment="center middle"><text size="xxlarge" color="black white" weight='bold'>{app_name}</text></hstack>
+      <hstack  padding="small" gap="medium" alignment="center middle"><text size="xxlarge" color={text_color} weight='bold'>{app_name}</text></hstack>
       <hstack  padding="small" gap="medium" alignment="center middle">
     <image
       url={app_logo}
@@ -233,17 +274,27 @@ Devvit.addMenuItem({
     </hstack>
   <button appearance="success" size="small" onPress={()=>{ updatepage("level")}}>{start_text}</button>
   
-  <hstack  padding="small" gap="medium" alignment="center middle"><text size="small" onPress={()=>{context.ui.navigateTo(app_url);}}>{app_url_text}</text></hstack>
+  <hstack  padding="small" gap="medium" alignment="center middle"><text size="small" color={text_color} onPress={()=>{context.ui.navigateTo(app_url);}}>{app_url_text}</text></hstack>
   </vstack>
+  </zstack>
     )
   }else if(page=="check" ){
     if(game_questions[index]["type"]=="text_question"){
       return (
-  
-        <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
+        <zstack height="100%" width="100%">
+              <image 
+          url={background_image}
+          imageWidth={300}
+          imageHeight={300}
+            height="100%"
+            width="100%"
+          resizeMode="fill"
+          description="background image"
+        />
+        <vstack  height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
         
         
-        <text alignment="center" color="black white" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+        <text alignment="center" color={text_color} size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
         
         <text wrap={true} alignment="center" size="large" weight="bold" color={correct ? `green` : 'red'}>{correct ? `You guessed it right!` : 'That\'s incorrect. The right answer is '+game_questions[index]["answer"]}</text>
         
@@ -251,14 +302,24 @@ Devvit.addMenuItem({
           
         
         </vstack>
+        </zstack>
       )
     }else{
 return (
-  
-  <vstack backgroundColor="white black" height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
+  <zstack height="100%" width="100%">
+  <image 
+url={background_image}
+imageWidth={300}
+imageHeight={300}
+height="100%"
+width="100%"
+resizeMode="fill"
+description="background image"
+/>
+  <vstack height="100%" width="100%"  padding="small" gap="medium"  alignment="center middle">
       
       
-  <text color="black white" alignment="center" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
+  <text color={text_color} alignment="center" size="large" weight="bold" wrap={true}>{game_questions[index]["question"]}</text>
   
   <text wrap={true} alignment="center" size="large" weight="bold" color={correct ? `green` : 'red'}>{correct ? `You guessed it right!` : 'That\'s incorrect. The right answer is '}</text>
   <image
@@ -273,17 +334,29 @@ return (
     
   
   </vstack>
+  </zstack>
 )
     }
  
   }else if(page=="level"){
     return (
+      <zstack height="100%" width="100%">
+      <image 
+  url={background_image}
+  imageWidth={300}
+  imageHeight={300}
+    height="100%"
+    width="100%"
+  resizeMode="fill"
+  description="background image"
+/>
       <vstack  height="100%" width="100%"  padding="small" gap="small" alignment="center middle">
-      <text size="xlarge"> Select Game Level </text>
+      <text size="xlarge" color={text_color}> Select Game Level </text>
       <hstack width="210px" ><button appearance="success" size="small" onPress={()=> setlevel("easy")} grow>Easy (5 Questions)</button></hstack>
       <hstack width="210px" ><button appearance="caution" size="small" onPress={()=>setlevel("medium")} grow>Medium (10 Questions)</button></hstack>
       <hstack width="210px" ><button appearance="destructive" size="small" onPress={()=>setlevel("hard")} grow>Hard (20 Questions)</button></hstack>
       </vstack>
+      </zstack>
         )
   }
   },
